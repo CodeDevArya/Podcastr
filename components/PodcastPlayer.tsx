@@ -130,7 +130,7 @@ const PodcastPlayer = () => {
               width={64}
               height={64}
               alt="player1"
-              className="aspect-square rounded-xl object-cover min-w-[60px]"
+              className="aspect-square rounded-xl cursor-pointer object-cover min-w-[60px]"
             />
           </Link>
           <div className="flex flex-col max-sm:w-[calc(100%-60px)]">
@@ -148,6 +148,7 @@ const PodcastPlayer = () => {
               height={24}
               alt="rewind"
               onClick={rewind}
+              className="cursor-pointer"
             />
             <h2 className="text-12 font-bold text-white-4">-5</h2>
           </div>
@@ -157,6 +158,7 @@ const PodcastPlayer = () => {
             height={30}
             alt="play"
             onClick={togglePlayPause}
+            className="cursor-pointer"
           />
           <div className="flex items-center gap-1.5">
             <h2 className="text-12 font-bold text-white-4">+5</h2>
@@ -166,6 +168,7 @@ const PodcastPlayer = () => {
               height={24}
               alt="forward"
               onClick={forward}
+              className="cursor-pointer"
             />
           </div>
         </div>
