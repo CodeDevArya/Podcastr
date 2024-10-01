@@ -44,7 +44,7 @@ const ProfileCard = ({
         width={250}
         height={250}
         alt="Podcaster"
-        className="aspect-square rounded-lg"
+        className="aspect-square rounded-lg object-cover"
       />
       <div className="flex flex-col justify-center max-md:items-center">
         <div className="flex flex-col gap-2.5">

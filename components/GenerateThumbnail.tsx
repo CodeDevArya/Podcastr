@@ -141,7 +141,7 @@ const GenerateThumbnail = (
           />
           {!isImageLoading ? (
             <>
-              <Image src="/icons/upload-image.svg" width={40} height={40} alt="upload" />
+              <Image src="/icons/upload-image.svg" width={40} height={40} alt="upload" className='object-cover'/>
               <div className="flex flex-col items-center gap-1">
                 <h2 className="text-12 font-bold text-orange-1">
                   Click to upload
@@ -164,7 +164,7 @@ const GenerateThumbnail = (
             src={image}
             width={200}
             height={200}
-            className="mt-5"
+            className="mt-5 object-cover"
             alt="thumbnail"
           />
         </div>

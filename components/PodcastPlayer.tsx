@@ -53,6 +53,17 @@ const PodcastPlayer = () => {
     }
   };
 
+  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (audioRef.current && duration) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickPosition = e.clientX - rect.left;
+      const clickPercentage = clickPosition / rect.width;
+      const newTime = clickPercentage * duration;
+      audioRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+    }
+  };
+
   useEffect(() => {
     const updateCurrentTime = () => {
       if (audioRef.current) {
@@ -83,6 +94,7 @@ const PodcastPlayer = () => {
       setIsPlaying(true);
     }
   }, [audio]);
+
   const handleLoadedMetadata = () => {
     if (audioRef.current) {
       setDuration(audioRef.current.duration);
@@ -99,11 +111,12 @@ const PodcastPlayer = () => {
         hidden: !audio?.audioUrl || audio?.audioUrl === "",
       })}
     >
-      {/* change the color for indicator inside the Progress component in ui folder */}
+      {/* Added onClick to handle progress bar clicks */}
       <Progress
         value={(currentTime / duration) * 100}
-        className="w-full"
+        className="w-full cursor-pointer"
         max={duration > 0 ? duration : 100}
+        onClick={handleProgressClick}
       />
       <section className="glassmorphism-black flex h-[112px] w-full items-center justify-between px-4 max-md:justify-center max-md:gap-5 md:px-12">
         <audio
@@ -161,7 +174,7 @@ const PodcastPlayer = () => {
         </div>
         <div className="flex items-center gap-6">
           <h2 className="text-16 font-normal text-white-2 max-md:hidden">
-            {formatTime(duration)}
+            {formatTime(currentTime)}/{formatTime(duration)}
           </h2>
           <div className="flex w-full gap-2">
             <Image

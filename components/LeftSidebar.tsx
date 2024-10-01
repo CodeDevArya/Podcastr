@@ -17,7 +17,7 @@ const LeftSidebar = () => {
         <section className='left_sidebar'>
             <nav className='flex flex-col gap-6'>
                 <Link href={"/"} className='flex cursor-pointer items-center gap-1 pb-10 max-lg:justify-center'>
-                    <Image src={"/icons/logo.svg"} alt='logo' width={23} height={27} />
+                    <Image src={"/icons/logo.svg"} alt='logo' width={23} height={27} className='object-cover'/>
                     <h1 className='text-24 font-extrabold text-white-1 max-lg:hidden'>Podcastr</h1>
                 </Link>
                 {sidebarLinks.map((item) => {
@@ -26,7 +26,7 @@ const LeftSidebar = () => {
                     return <Link href={item.route} key={item.label} className={cn('flex gap-3 items-center py-4 max-lg:px-4 justify-start', {
                         "bg-nav-focus border-r-4 border-orange-1": isActive
                     })}>
-                        <Image src={item.imgURL} alt={item.label} width={24} height={24} />
+                        <Image src={item.imgURL} alt={item.label} width={24} height={24} className='object-cover'/>
                         <p>{item.label}</p>
                     </Link>
                 })}

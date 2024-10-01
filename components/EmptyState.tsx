@@ -12,6 +12,7 @@ const EmptyState = ({ title, search, buttonLink, buttonText }: EmptyStateProps) 
                 width={250}
                 height={250}
                 alt='EmptyState'
+                className='object-cover'
             />
             <div className='flex-center w-full max-w-[254px] flex-col gap-3'>
                 <h1 className='text-16 text-center font-medium text-white-1'>{title}</h1>
@@ -26,6 +27,7 @@ const EmptyState = ({ title, search, buttonLink, buttonText }: EmptyStateProps) 
                         width={20}
                         height={20}
                         alt='discover'
+                        className='object-cover'
                         />
                         <h1 className='text-16 font-extrabold text-white-1'>{buttonText}</h1>
                         </Link>
