@@ -319,18 +319,18 @@ const PodcastPlayer = () => {
           onLoadedMetadata={handleLoadedMetadata}
           onEnded={handleAudioEnded}
         />
-        <div className="flex items-center gap-4 max-md:w-full max-md:mb-3 max-md:mt-4 max-md:justify-center">
+        <div className="flex items-center gap-4 max-md:w-full max-md:mb-3 max-md:mt-4 max-md:justify-center md:max-w-[42%] overflow-hidden text-ellipsis">
           <Link href={`/podcasts/${audio?.podcastId}`}>
             <Image
               src={audio?.imageUrl! || "/images/player1.png"}
               width={64}
               height={64}
               alt="player1"
-              className="aspect-square rounded-xl object-cover"
+              className="aspect-square rounded-xl object-cover min-w-[60px]"
             />
           </Link>
-          <div className="flex flex-col">
-            <h2 className="text-14 truncate font-semibold text-white-1">
+          <div className="flex flex-col max-sm:w-[calc(100%-60px)]">
+            <h2 className="text-14 max-sm:truncate font-semibold text-white-1"> 
               {audio?.title}
             </h2>
             <p className="text-12 font-normal text-white-2">{audio?.author}</p>
