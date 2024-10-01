@@ -23,7 +23,8 @@ const PodcastDetailPlayer = ({
   isOwner,
   authorImageUrl,
   authorId,
-}: PodcastDetailPlayerProps) => {
+// }: PodcastDetailPlayerProps) => {
+}: any) => {
   const router = useRouter();
   const { setAudio } = useAudio();
   const { toast } = useToast();
