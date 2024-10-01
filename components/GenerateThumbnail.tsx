@@ -120,7 +120,7 @@ const GenerateThumbnail = (
         <div className="flex flex-col gap-5">
           <div className="mt-5 flex flex-col gap-2.5">
             <Label className="text-16 font-bold text-white-1">
-            Enter Image Description
+            Enter Image Description (optional)
             </Label>
             <Textarea
               className="input-class font-light focus-visible:ring-offset-orange-1"
