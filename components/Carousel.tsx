@@ -11,7 +11,7 @@ import LoaderSpinner from './LoaderSpinner'
 const EmblaCarousel = ({ fansLikeDetail }: CarouselProps) => {
   const router = useRouter();
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay
